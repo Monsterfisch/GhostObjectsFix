@@ -1,3 +1,3 @@
-# Correction des objets fantômes 1.0.1
+# Ghost Objects Fix 1.0.1
 
-Répare les listes d’objets pour éviter les drapeaux, projectiles ou autres objets affichés sur la mauvaise case.
+Répare les listes d'objets par case afin que drapeaux, pierres, flèches et autres petits objets cessent d'apparaître sur des cases sans rapport. L'intervalle de réparation est configurable.

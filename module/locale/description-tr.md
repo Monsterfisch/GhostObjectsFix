@@ -1,3 +1,3 @@
-# Hayalet nesne düzeltmesi 1.0.1
+# Ghost Objects Fix 1.0.1
 
-Bayrak, mermi ve diğer küçük nesnelerin yanlış karede görünmesini önlemek için nesne listelerini onarır.
+Bayrakların, taşların, okların ve diğer küçük nesnelerin alakasız karelerde görünmesini önlemek için kare nesne listelerini onarır. Onarım aralığı ayarlanabilir.

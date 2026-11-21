@@ -1,3 +1,3 @@
-# Corrección de objetos fantasma 1.0.1
+# Ghost Objects Fix 1.0.1
 
-Repara las listas para evitar que banderas, proyectiles y otros objetos aparezcan en casillas ajenas.
+Repara las listas de objetos de cada casilla para que banderas, piedras, flechas y otros objetos pequeños dejen de aparecer en casillas ajenas. El intervalo de reparación es configurable.

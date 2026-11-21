@@ -1,3 +1,3 @@
-# Szellemtárgyak javítása 1.0.1
+# Ghost Objects Fix 1.0.1
 
-Javítja a tárgylistákat, hogy ne jelenjenek meg rossz mezőn zászlók, lövedékek és egyéb tárgyak.
+Kijavítja a mezők objektumlistáit, így a zászlók, kövek, nyilak és más apró objektumok nem jelennek meg idegen mezőkön. A javítás gyakorisága beállítható.

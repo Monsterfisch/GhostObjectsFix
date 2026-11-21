@@ -1,0 +1,26 @@
+options:
+- display: GroupBox
+  category: [Ghost Objects Fix]
+  header: '{{group}}'
+  text: '{{group_descr}}'
+  hasHeader: true
+  children:
+  - url: ghost-objects-fix.enabled
+    name: ghost-objects-fix-enabled
+    text: '{{enabled}}'
+    tooltip: '{{enabled_tooltip}}'
+    display: Switch
+    contents:
+      type: boolean
+      value: true
+  - url: ghost-objects-fix.interval
+    name: ghost-objects-fix-interval
+    text: '{{interval}}'
+    tooltip: '{{interval_tooltip}}'
+    display: Number
+    contents:
+      type: integer
+      value: 10
+      min: 1
+      max: 500
+      step: 1

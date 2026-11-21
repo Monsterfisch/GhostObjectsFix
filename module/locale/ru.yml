@@ -1,0 +1,7 @@
+enabled: Исправить списки объектов
+enabled_tooltip: Размещает объекты на их клетках. В Improved Siegeengines отключите прицеливание и разлив
+  масла.
+interval: Интервал (обновления объектов)
+interval_tooltip: Меньше — быстрее исправление. 1 означает каждое обновление.
+bugfixes: Bugfixes
+tags.bugfixes: Исправления

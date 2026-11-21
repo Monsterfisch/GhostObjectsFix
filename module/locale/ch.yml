@@ -1,0 +1,6 @@
+enabled: 修复对象列表
+enabled_tooltip: 将物体归到实际所在格。须关闭 Improved Siegeengines 的油料瞄准和蔓延选项。
+interval: 修复间隔（对象更新次数）
+interval_tooltip: 值越小，修复越快。1 表示每次更新都修复。
+bugfixes: Bugfixes
+tags.bugfixes: 错误修复

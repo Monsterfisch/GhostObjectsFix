@@ -1,0 +1,7 @@
+enabled: تعمیر فهرست اشیا
+enabled_tooltip: هر شیء را به خانه واقعی آن نسبت می‌دهد. نشانه‌گیری و پخش روغن در Improved Siegeengines
+  باید خاموش باشد.
+interval: فاصله (به‌روزرسانی اشیا)
+interval_tooltip: عدد کمتر خطا را زودتر رفع می‌کند. ۱ یعنی تعمیر در هر به‌روزرسانی.
+bugfixes: Bugfixes
+tags.bugfixes: رفع اشکال

@@ -1,0 +1,7 @@
+enabled: Objektlisten reparieren
+enabled_tooltip: Ordnet Objekte ihren tatsächlichen Feldern zu. Öl-Zielen und Öl-Ausbreitung in Improved
+  Siegeengines müssen aus sein.
+interval: Reparaturintervall (Objektaktualisierungen)
+interval_tooltip: Kleinere Werte beheben Anzeigefehler früher. 1 repariert bei jeder Aktualisierung.
+bugfixes: Bugfixes
+tags.bugfixes: Fehlerkorrekturen

@@ -1,0 +1,7 @@
+enabled: Tárgylisták javítása
+enabled_tooltip: A tárgyakat a saját mezőjükhöz rendeli. Az Improved Siegeengines olajcélzása és olajterjedése
+  legyen kikapcsolva.
+interval: Időköz (tárgyfrissítés)
+interval_tooltip: Kisebb érték gyorsabb javítást ad. Az 1 minden frissítéskor javít.
+bugfixes: Bugfixes
+tags.bugfixes: Hibajavítások

@@ -1,0 +1,7 @@
+enabled: Réparer les listes d’objets
+enabled_tooltip: Replace chaque objet sur sa case. Désactivez la visée et la propagation de l’huile dans
+  Improved Siegeengines.
+interval: Intervalle (mises à jour des objets)
+interval_tooltip: Une valeur basse corrige plus vite. 1 répare à chaque mise à jour.
+bugfixes: Corrections de bugs
+tags.bugfixes: Corrections

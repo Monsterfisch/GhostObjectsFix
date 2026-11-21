@@ -1,0 +1,7 @@
+enabled: Nesne listelerini onar
+enabled_tooltip: Nesneyi gerçek karesine bağlar. Improved Siegeengines yağ nişanı ve yayılması kapalı
+  olmalıdır.
+interval: Aralık (nesne güncellemesi)
+interval_tooltip: Daha düşük değer hatayı daha çabuk düzeltir. 1 her güncellemede onarır.
+bugfixes: Bugfixes
+tags.bugfixes: Hata düzeltmeleri

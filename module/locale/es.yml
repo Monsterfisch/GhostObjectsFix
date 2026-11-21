@@ -1,0 +1,7 @@
+enabled: Reparar listas de objetos
+enabled_tooltip: Asigna cada objeto a su casilla. Desactiva el apuntado y la propagación de aceite de
+  Improved Siegeengines.
+interval: Intervalo (actualizaciones de objetos)
+interval_tooltip: Un valor bajo corrige antes. 1 repara en cada actualización.
+bugfixes: Bugfixes
+tags.bugfixes: Correcciones

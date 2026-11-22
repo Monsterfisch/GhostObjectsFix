@@ -1,3 +1,3 @@
-# Ghost Objects Fix 1.0.1
+# Ghost Objects Fix
 
-Repairs tile object lists so flags, stones, arrows and other small objects stop appearing on unrelated tiles. The repair interval is configurable.
+Stops flags, stones, arrows, dust and other small objects from showing up in places where they don't belong.

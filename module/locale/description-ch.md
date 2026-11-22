@@ -1,3 +1,2 @@
-# Ghost Objects Fix 1.0.1
-
+# Ghost Objects Fix
 修复地块物体列表，防止旗帜、石块、箭矢等小型物体出现在无关地块上。修复间隔可自由配置。

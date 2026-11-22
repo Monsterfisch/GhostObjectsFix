@@ -1,2 +1,2 @@
 # Ghost Objects Fix
-Répare les listes d'objets par case afin que drapeaux, pierres, flèches et autres petits objets cessent d'apparaître sur des cases sans rapport. L'intervalle de réparation est configurable.
+Empêche les drapeaux, les pierres, les flèches, la poussière et d'autres petits objets d'apparaître là où ils n'ont pas leur place.

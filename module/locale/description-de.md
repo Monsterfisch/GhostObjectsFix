@@ -1,2 +1,2 @@
 # Ghost Objects Fix
-Repariert die Objektlisten einzelner Felder, damit Flaggen, Steine, Pfeile und andere kleine Objekte nicht mehr auf fremden Feldern erscheinen. Das Reparaturintervall ist einstellbar.
+Verhindert, dass Flaggen, Steine, Pfeile, Staub und andere kleine Objekte an Stellen erscheinen, wo sie nicht hingehören.

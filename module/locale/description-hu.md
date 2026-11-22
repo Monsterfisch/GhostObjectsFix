@@ -1,2 +1,2 @@
 # Ghost Objects Fix
-Kijavítja a mezők objektumlistáit, így a zászlók, kövek, nyilak és más apró objektumok nem jelennek meg idegen mezőkön. A javítás gyakorisága beállítható.
+Megakadályozza, hogy zászlók, kövek, nyilak, por és más apró objektumok olyan helyeken jelenjenek meg, ahová nem valók.

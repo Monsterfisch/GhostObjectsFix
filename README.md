@@ -4,7 +4,6 @@
 
 Repairs tile object lists so flags, stones, arrows and other small objects stop appearing on unrelated tiles. The repair interval is configurable.
 
-- Package version: **1.0.1**
 - Module directory: `module/`
 - Targets: Stronghold Crusader 1.41 and Stronghold Crusader Extreme 1.41
 - Requires UCP framework 3.0.7 and frontend 1.0.2 or a compatible later version

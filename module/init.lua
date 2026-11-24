@@ -19,10 +19,10 @@
 
 -- the entity update: push ecx / push ebx / push ebp / push esi / mov esi, ecx /
 -- mov ecx, [tick] / mov eax, 0x66666667 / imul ecx / sar edx, 2
-local UPDATE_AOB = "51 53 55 56 8B F1 8B 0D ? ? ? ? B8 67 66 66 66 F7 E9 C1 FA 02"
+-- Match the unique body even when the first six bytes have been overwritten.
+local UPDATE_AOB = "8B 0D ? ? ? ? B8 67 66 66 66 F7 E9 C1 FA 02 8B C2 C1 E8 1F 03 C2 8D 04 80 03 C0 2B C8 75 07 C7 46 08 19 00 00 00"
 local UPDATE_BYTES = { 0x51, 0x53, 0x55, 0x56, 0x8B, 0xF1 }
--- the same, with another module's 6-byte hook on its start (jmp <hook> / nop): chained to
-local HOOKED_AOB = "E9 ? ? ? ? 90 8B 0D ? ? ? ? B8 67 66 66 66 F7 E9 C1 FA 02"
+local CHAIN_OPCODE, CHAIN_PADDING = 0xE9, 0x90
 
 -- the unlink: its head byte array at +0x2A, its head word array at +0x78
 local UNLINK_AOB = "53 55 56 8B 74 24 10 8B C6 69 C0 E8 00 00 00 57 8D 3C 08 8B 47 60 33 ED 33 DB 3B C5 0F 84 ? ? ? ? 83 FE 19 7D 4D 0F B6 90"
@@ -100,7 +100,7 @@ local CHAIN_TAIL = [[
 jmp CHAIN]]
 
 local function scan(pattern, what)
-  local ok, address = pcall(core.scanForAOB, pattern)
+  local ok, address = pcall(core.AOBScan, pattern)
   if not ok or address == nil or address == 0 then
     log(WARNING, "ghost-objects-fix: " .. what .. " not found; nothing changed")
     return nil
@@ -130,21 +130,24 @@ local M = {}
 
 function M:enable(config)
   if not setting(config, "enabled") then return end
-  local okPlain, plain = pcall(core.scanForAOB, UPDATE_AOB)
-  local update, chain = nil, nil
-  if okPlain and plain and plain ~= 0 then
-    update = plain
-  else
-    update = scan(HOOKED_AOB, "the entity update")
-    if update then chain = (update + 5 + core.readInteger(update + 1)) % 4294967296 end
+  local body = scan(UPDATE_AOB, "the entity update")
+  if not body then return end
+  local duplicate = core.scanForAOB(UPDATE_AOB, body + 1)
+  if duplicate and duplicate ~= 0 then
+    error("ghost-objects-fix: the entity update signature is ambiguous")
   end
-  local unlink = scan(UNLINK_AOB, "the entity unlink")
+  local update = body - #UPDATE_BYTES
+  local chain
+  if not bytesAre(update, UPDATE_BYTES) then
+    if core.readByte(update) ~= CHAIN_OPCODE or core.readByte(update + 5) ~= CHAIN_PADDING then
+      log(WARNING, "ghost-objects-fix: another module changed the start of the entity update; nothing changed")
+      return
+    end
+    chain = (update + 5 + core.readInteger(update + 1)) % 4294967296
+  end
+  local unlink = scan(UNLINK_AOB, "the entity tile list walker")
   local gulls = scan(GULLS_AOB, "the seagull removal")
-  if not update or not unlink or not gulls then return end
-  if chain == nil and not bytesAre(update, UPDATE_BYTES) then
-    log(WARNING, "ghost-objects-fix: another module changed the start of the entity update; nothing changed")
-    return
-  end
+  if not unlink or not gulls then return end
   if not bytesAre(unlink + UNLINK.byteHead - 3, UNLINK.byteHeadOp)
       or not bytesAre(unlink + UNLINK.wordHead - 4, UNLINK.wordHeadOp)
       or not bytesAre(gulls + GULLS.cap - 2, GULLS.capOp) then
@@ -160,7 +163,15 @@ function M:enable(config)
   end
   local interval = number(config, "interval", 1, 500)
   local countdown = core.allocate(4, true)
-  core.writeInteger(countdown, interval)
+  local function resetCountdown()
+    core.writeInteger(countdown, interval)
+  end
+  resetCountdown()
+  modules["map-extensions"]:registerSection("ghost-objects-fix", {
+    initialize = resetCountdown,
+    deserialize = resetCountdown,
+    serialize = function() end,
+  })
   local script = TEMPLATE:gsub("TAIL", chain and CHAIN_TAIL or PROLOGUE_TAIL)
   local stub = core.allocateAssembly(script, {
     COUNTDOWN = countdown, INTERVAL = interval, WORD_HEAD = wordHead, BYTE_HEAD = byteHead,
@@ -168,7 +179,7 @@ function M:enable(config)
   })
   core.writeCode(update, { 0xE9, core.itob(core.getRelativeAddress(update, stub, -5)), 0x90 })
   log(INFO, string.format("ghost-objects-fix: tile object lists are rebuilt every %d entity updates (%d slots)%s",
-    interval, cap, chain and string.format(", chained to the hook at 0x%X", chain) or ""))
+    interval, cap, chain and ", chained to the existing entity update hook" or ""))
 end
 
 function M:disable() end

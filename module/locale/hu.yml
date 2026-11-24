@@ -1,5 +1,5 @@
 enabled: Objektumlisták javítása
-enabled_tooltip: A játék minden mezőről listát vezet a rajta lévő apró objektumokról (zászlók, lövedékek, por, füst, madarak), és minden listát a saját mezőjén rajzol ki. Néha egy objektum úgy törlődik, hogy benne marad egy mező listájában, ezért a helyére lépő következő objektum (zászló, kő, nyíl...) ezen a régi mezőn is megjelenik, gyakran villogva. Ez a javítás az objektumok valós helye alapján újraépíti minden mező listáját. Használata előtt kapcsold ki az olajcélzás és olajterjedés beállításait az Improved Siege Engines modulban.
+enabled_tooltip: A játék minden mezőről listát vezet a rajta lévő apró objektumokról (zászlók, lövedékek, por, füst, madarak), és minden listát a saját mezőjén rajzol ki. Néha egy objektum úgy törlődik, hogy benne marad egy mező listájában, ezért a helyére lépő következő objektum (zászló, kő, nyíl...) ezen a régi mezőn is megjelenik, gyakran villogva. Ez a javítás az objektumok valós helye alapján újraépíti minden mező listáját.
 interval: Javítás ennyi objektumfrissítésenként
 interval_tooltip: Milyen gyakran épülnek újra a listák, a játék objektumfrissítéseiben mérve (másodpercenként több). 1 = minden frissítésnél. Az újraépítés gyors; az alacsonyabb érték hamarabb eltünteti a szellemobjektumokat.
 bugfixes: Hibajavítások

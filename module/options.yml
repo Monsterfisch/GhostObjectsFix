@@ -1,31 +1,26 @@
 options:
-- url: ghost-objects-fix.enabled
-  name: ghost-objects-fix-enabled
-  display: UCP2Switch
-  contents:
-    type: boolean
-    value: true
-  header: '{{enabled}}'
-  text: '{{enabled_tooltip}}'
-  category:
-  - '{{bugfixes}}'
+- display: GroupBox
+  category: [Ghost Objects Fix]
+  header: '{{group}}'
+  text: '{{group_descr}}'
+  hasHeader: true
   children:
-  - display: GroupBox
-    hasHeader: true
-    accordion:
-      enabled: true
-    header: '{{interval}}'
-    text: '{{interval_tooltip}}'
-    children:
-    - url: ghost-objects-fix.interval
-      name: ghost-objects-fix-interval
-      text: '{{interval}}'
-      display: Number
-      contents:
-        type: integer
-        value: 10
-        min: 1
-        max: 500
-        step: 1
-meta:
-  version: 1.0.0
+  - url: ghost-objects-fix.enabled
+    name: ghost-objects-fix-enabled
+    text: '{{enabled}}'
+    tooltip: '{{enabled_tooltip}}'
+    display: Switch
+    contents:
+      type: boolean
+      value: true
+  - url: ghost-objects-fix.interval
+    name: ghost-objects-fix-interval
+    text: '{{interval}}'
+    tooltip: '{{interval_tooltip}}'
+    display: Number
+    contents:
+      type: integer
+      value: 10
+      min: 1
+      max: 500
+      step: 1

@@ -1,11 +1,6 @@
-enabled: Repair the object lists
-enabled_tooltip: The game keeps a list of the small objects on each tile (flags, projectiles, dust, smoke,
-  birds) and draws each list on its own tile. Sometimes an object is deleted while it is still in a tile's
-  list. The next object that takes its place (a flag, a stone, an arrow ...) is then also drawn on that
-  old tile, often flickering. This rebuilds every tile's list from where each object really is. Disable
-  the Improved Siege Engines oil aim and oil spread options before using this fix.
-interval: Repair every this many object updates
-interval_tooltip: How often the lists are rebuilt, counted in the game's object updates (several per second).
-  1 = every update. The rebuild is quick; lower numbers clear ghosts sooner.
-bugfixes: Bugfixes
-tags.bugfixes: Bug fixes
+group: "Ghost Objects Fix"
+group_descr: "Stops flags, stones, arrows, dust and other small objects from showing up in places where they don't belong."
+enabled: "Repair the object lists"
+enabled_tooltip: "The game keeps a list of the small objects on each tile (flags, projectiles, dust, smoke, birds) and draws each list on its own tile. Sometimes an object is deleted while it is still in a tile's list. The next object that takes its place (a flag, a stone, an arrow ...) is then also drawn on that old tile, often flickering. This rebuilds every tile's list from where each object really is."
+interval: "Repair every this many object updates"
+interval_tooltip: "How often the lists are rebuilt, counted in the game's object updates (several per second). 1 = every update. The rebuild is quick; lower numbers clear ghosts sooner."

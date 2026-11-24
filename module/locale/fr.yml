@@ -1,7 +1,0 @@
-enabled: Réparer les listes d'objets
-enabled_tooltip: |-
-  Le jeu maintient une liste des petits objets présents sur chaque case (drapeaux, projectiles, poussière, fumée, oiseaux) et affiche chaque liste sur sa case. Parfois un objet est supprimé alors qu'il figure encore dans la liste d'une case : l'objet suivant qui réutilise son emplacement (drapeau, pierre, flèche...) s'affiche alors aussi sur cette ancienne case, souvent en scintillant. Cette option reconstruit la liste de chaque case d'après la position réelle de chaque objet. Désactivez les options de visée et d'écoulement d'huile d'Improved Siege Engines avant d'utiliser ce correctif.
-interval: Réparer toutes les N mises à jour d'objets
-interval_tooltip: Fréquence de reconstruction des listes, comptée en mises à jour d'objets du jeu (plusieurs par seconde). 1 = à chaque mise à jour. L'opération est rapide ; une valeur plus basse efface les objets fantômes plus tôt.
-bugfixes: Corrections
-tags.bugfixes: Corrections

@@ -1,6 +1,0 @@
-enabled: Nesne listelerini onar
-enabled_tooltip: Oyun her karedeki küçük nesnelerin (bayraklar, mermiler, toz, duman, kuşlar) bir listesini tutar ve her listeyi kendi karesinde çizer. Bazen bir nesne hâlâ bir karenin listesindeyken silinir; onun yerini alan sonraki nesne (bayrak, taş, ok...) o eski karede de çizilir ve sıkça titrer. Bu ayar her karenin listesini nesnelerin gerçek konumundan yeniden oluşturur. Bu düzeltmeyi kullanmadan önce Improved Siege Engines içindeki yağ hedefleme ve yağ yayılma ayarlarını kapatın.
-interval: Bu kadar nesne güncellemesinde bir onar
-interval_tooltip: Listelerin oyunun nesne güncellemeleri (saniyede birkaç kez) cinsinden ne sıklıkta yeniden oluşturulacağı. 1 = her güncellemede. Yeniden oluşturma hızlıdır; daha düşük değerler hayalet nesneleri daha çabuk temizler.
-bugfixes: Hata düzeltmeleri
-tags.bugfixes: Hata düzeltmeleri
